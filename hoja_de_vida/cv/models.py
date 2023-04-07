@@ -1,7 +1,7 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
 
 # Se crea modelos los cuales estan divididos en 7 clases para poder realizar la creación de una hoja de vida
 
