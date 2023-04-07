@@ -16,6 +16,7 @@ class Profile(models.Model):
 
 class Contact(models.Model):
     
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     phone = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     city = models.CharField(max_length=200)

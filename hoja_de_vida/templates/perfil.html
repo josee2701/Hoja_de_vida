@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Mi hoja de vida</title>
+    <title> curriculum </title>
     <style>
       /* Estilos CSS */
       body {
@@ -47,27 +48,33 @@
   </head>
   <body>
     <header>
-      <h1>Mi nombre completo</h1>
-      <p>Desarrollador de Python</p>
+      <img src="{{perfil.photo.url}}">
+      <h1>{{perfil.name}} {{perfil.last_name}}</h1>
+      <p>{{perfil.career}}</p>
     </header>
     <div class="section">
-      <h2>Información de contacto</h2>
+      <h2>Contact information</h2>
       <ul>
-        <li>Correo electrónico: miemail@gmail.com</li>
-        <li>Teléfono: +XX (XXX) XXXXXXX</li>
-        <li>Ubicación: Ciudad, País</li>
+        <li>Email: {{contact.email}}</li>
+        <li>Tel: {{contact.phone}}</li>
+        <li>Location: {{contact.city}}</li>
       </ul>
     </div>
     <div class="section">
-      <h2>Resumen</h2>
-      <p>En esta sección, puedes proporcionar un breve resumen de tus habilidades, experiencia y objetivos profesionales.</p>
+      <h2>Professional Profile</h2>
+      <p>{{descrision.description}}</p>
     </div>
     <div class="section">
-      <h2>Educación</h2>
+      <h2>Education</h2>
+      {% for education in educacion %}
       <ul>
-        <li>Nombre de la institución: Título obtenido (año de graduación)</li>
-        <li>Nombre de la institución: Título obtenido (año de graduación)</li>
+        <li>{{education.institution}}</li>
+        <li>({{education.start_date}} - {{education.end_date}})</li>
+        <li>{{education.description}}</li>
+        
       </ul>
+      
+      {% endfor %}
     </div>
     <div class="section">
       <h2>Habilidades</h2>
