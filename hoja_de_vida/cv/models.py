@@ -50,7 +50,7 @@ class Experience(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.job_title
     
     
 class Education(models.Model):

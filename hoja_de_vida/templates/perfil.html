@@ -77,19 +77,23 @@
       {% endfor %}
     </div>
     <div class="section">
-      <h2>Habilidades</h2>
+      <h2>Skills</h2>
+      {% for Skills in habilidades %}
       <ul>
-        <li>Habilidad 1</li>
-        <li>Habilidad 2</li>
-        <li>Habilidad 3</li>
+        <li>{{Skills}}</li>
+        <li>{{Skills.description}}</li>
       </ul>
+      {% endfor %}
     </div>
     <div class="section">
-      <h2>Experiencia laboral</h2>
+      <h2>Work experience</h2>
+      {% for experience in esperiencia %}
       <ul>
-        <li>Nombre de la empresa: Puesto (año de inicio - año de finalización)</li>
-        <li>Nombre de la empresa: Puesto (año de inicio - año de finalización)</li>
+        <li>{{experience.job_title}} </li>
+        <li>{{experience.company}} {{experience.start_date}}-{{experience.end_date}}</li>
+        <li>{{experience.description}}</li>
       </ul>
+      {% endfor %}
     </div>
   </body>
 </html>

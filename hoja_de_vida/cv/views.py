@@ -29,5 +29,7 @@ class TemplatePerfil(TemplateView):
         contact = Contact.objects.first()
         descrision = Professional_profile.objects.first()
         educacion = Education.objects.all()
-        context.update({"perfil": perfil,"contact":contact, "descrision":descrision, "educacion":educacion})
+        habilidades= Skill.objects.all()
+        esperiencia = Experience.objects.all()
+        context.update({"perfil": perfil,"contact":contact, "descrision":descrision, "educacion":educacion,"habilidades":habilidades,"esperiencia":esperiencia})
         return context
